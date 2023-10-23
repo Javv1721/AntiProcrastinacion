@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Redirección de Productividad",
+  "version": "1.0",
+  "description": "Redirige búsquedas a sitios de productividad.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "webRequest"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.jpg"
+  }
+}
