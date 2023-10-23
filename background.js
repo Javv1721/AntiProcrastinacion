@@ -7,7 +7,9 @@ function comprobarCondicion() {
       const url = tab.url.toLowerCase(); // Convierte la URL a minúsculas
       if (url.includes("tiktok") || url.includes("instagram") || url.includes("shorts") || url.includes("facebook") || url.includes("porn") || url.includes("xxx") || url.includes("hentai") || url.includes("twitter") || url.includes("cascade") || url.includes("paginated")) {
         // Redirigir a chess.com o a la URL de tu elección
-        chrome.tabs.update(tab.id, { url: "https://www.chess.com" });
+        chrome.tabs.update(tab.id, { url: "file:///C:/Users/Jonat/Desktop/Projecto%20Anti-Procrastinacion/Lobby.html" });
+
+        
       }
 
       console.log("URL de la pestaña: " + tab.url);
