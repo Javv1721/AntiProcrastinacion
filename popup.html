@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Palabras Prohibidas</title>
+    <style>
+        /* Estilos CSS (puedes personalizarlos) */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+        }
+        button {
+            background-color: #0074D9;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Configuración de Palabras Prohibidas</h1>
+    <p>Agrega o quita palabras de la lista:</p>
+    <label for="palabra">Palabra:</label>
+    <input type="text" id="palabra">
+    <button onclick="agregarPalabra()">Agregar</button>
+
+    <h2>Palabras Prohibidas:</h2>
+    <ul id="listaPalabras">
+        <!-- Aquí se mostrarán las palabras agregadas -->
+    </ul>
+
+    <script>
+        // Lista de palabras prohibidas (inicialmente vacía)
+        const palabrasProhibidas = [];
+
+        // Función para agregar una palabra a la lista
+        function agregarPalabra() {
+            const palabraInput = document.getElementById("palabra");
+            const nuevaPalabra = palabraInput.value.trim().toLowerCase();
+            if (nuevaPalabra) {
+                palabrasProhibidas.push(nuevaPalabra);
+                palabraInput.value = ""; // Limpiar el campo de entrada
+                actualizarLista();
+            }
+        }
+
+        // Función para actualizar la lista de palabras en la interfaz
+        function actualizarLista() {
+            const listaPalabras = document.getElementById("listaPalabras");
+            listaPalabras.innerHTML = ""; // Limpiar la lista actual
+            palabrasProhibidas.forEach(palabra => {
+                const li = document.createElement("li");
+                li.textContent = palabra;
+                listaPalabras.appendChild(li);
+            });
+        }
+
+        // Llama a la función de actualización inicial
+        actualizarLista();
+    </script>
+</body>
+</html>
